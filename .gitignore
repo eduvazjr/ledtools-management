@@ -1,81 +1,28 @@
-*.py[cod]
+# Python
+__pycache__/
+*.pyc
+*.pyw
+*.pyx
 
-# C extensions
-*.so
-
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-__pycache__
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# pycharm
-.idea/
-
-# djangoSige
-migrations/
-ArquivosXML/
-arquivos/
-setup.py
-djangosige/configs/configs.py
-djangosige/media/imagens/usuarios/
-.env
+# Virtual Environments
 .venv/
-*.sqlite3
-env/
 venv/
+env/
+ENV/
 
-# Volume do postgres no docker-compose (criado como root pelo container).
-database/
+# Django specific
+db.sqlite3
 
-# Configuracoes locais de ferramentas de desenvolvimento
-CLAUDE.md
-.claude/
-AGENTS.md
-GEMINI.md
-.aider*
-.cursorrules
-.cursor/
-.claude-code/
-docs/superpowers/
-
-# Playwright MCP (screenshots e snapshots de sessões interativas)
-.playwright-mcp/
-
-# uv (uv.lock e .python-version sao versionados intencionalmente)
-
-# Node.js
+# Node
 node_modules/
-package-lock.json
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Lumina - Arquivos de desenvolvimento e documentação temporária
-*_old.html
-*_backup.html
-*_modern.html
-set_password.py
-djangosige/static/css/input.css
+# Windows
+.DS_Store
+Thumbs.db
 
+# Backup files
+*.bundle
+*.zip
+
+# Environment variables (if any)
+.env*

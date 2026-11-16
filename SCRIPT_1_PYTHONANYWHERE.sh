@@ -11,7 +11,7 @@ cd ~
 
 # Clonar o projeto do GitHub
 echo "[1/4] Clonando projeto do GitHub..."
-git clone https://github.com/eduvazjr/lumina-led-tools.git djangoSIGE
+git clone https://github.com/eduvazjr/ledtools-management.git djangoSIGE
 cd djangoSIGE
 
 echo ""

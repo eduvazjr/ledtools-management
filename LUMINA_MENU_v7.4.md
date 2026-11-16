@@ -1,4 +1,4 @@
-# 🎨 Lumina v7.4 - Novo Menu Principal LED TOOLS
+# 🎨 Menu Principal v7.5 - Sistema de Gerenciamento
 
 ## 📋 Resumo da Atualização
 

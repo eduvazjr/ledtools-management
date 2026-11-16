@@ -1,12 +1,12 @@
-# 🚀 Guia: Subir Lumina para o GitHub
+# 🚀 Guia: Subir Sistema para o GitHub
 
 ## ✅ Preparação Completa!
 
-O projeto Lumina v7.4 está **pronto para ser enviado ao GitHub**!
+O Sistema v7.5 está **pronto para ser enviado ao GitHub**!
 
 **Commit criado:**
 ```
-feat: Lumina v7.4 - Sistema completo LED TOOLS
+feat: Sistema v7.5 - Gerenciamento Completo
 58 files changed, 14900 insertions(+)
 ```
 
@@ -18,8 +18,8 @@ feat: Lumina v7.4 - Sistema completo LED TOOLS
 
 1. Acesse: https://github.com/new
 2. Preencha:
-   - **Nome:** `lumina-led-tools` ou `djangosige-lumina`
-   - **Descrição:** "💡 Sistema ERP Lumina - LED TOOLS | Django 5.2 | Performance 6x melhor"
+   - **Nome:** `ledtools-management`
+   - **Descrição:** "Sistema de Gerenciamento v7.5 | Django 5.2 | Performance otimizada"
    - **Privacidade:** Public ou Private (sua escolha)
    - ⚠️ **NÃO marque** "Initialize with README"
    - ⚠️ **NÃO adicione** .gitignore ou licença
@@ -37,7 +37,7 @@ git remote remove origin
 
 # 3. Adicione seu novo repositório
 # SUBSTITUA "SEU-USUARIO" pelo seu username do GitHub
-git remote add origin https://github.com/SEU-USUARIO/lumina-led-tools.git
+git remote add origin https://github.com/eduvazjr/ledtools-management.git
 
 # 4. Envie o código
 git branch -M main
@@ -116,7 +116,7 @@ cat ~/.ssh/id_ed25519.pub
 
 ### 3. Use SSH no remote
 ```bash
-git remote add origin git@github.com:SEU-USUARIO/lumina-led-tools.git
+git remote add origin git@github.com:eduvazjr/ledtools-management.git
 git push -u origin main
 ```
 
@@ -126,7 +126,7 @@ git push -u origin main
 
 Após o push, verifique:
 
-1. **Repositório online:** https://github.com/SEU-USUARIO/lumina-led-tools
+1. **Repositório online:** https://github.com/eduvazjr/ledtools-management
 2. **Arquivos enviados:** 58 arquivos
 3. **Commit visível:** "feat: Lumina v7.4"
 4. **Documentação presente:**

@@ -16,7 +16,7 @@ Sua rede/firewall está bloqueando acesso à **API do GitHub**, impossibilitando
 
 ### Passo 1: Acesse o repositório
 
-https://github.com/eduvazjr/lumina-led-tools
+https://github.com/eduvazjr/ledtools-management
 
 ### Passo 2: Upload dos arquivos
 
@@ -33,7 +33,7 @@ https://github.com/eduvazjr/lumina-led-tools
 
 4. Na mensagem de commit, escreva:
    ```
-   feat: Lumina v7.4 - Sistema completo LED TOOLS
+   feat: Sistema v7.5 - Gerenciamento
    
    Upload inicial do projeto Lumina modernizado
    ```
@@ -53,12 +53,12 @@ https://github.com/eduvazjr/lumina-led-tools
 
 Criei um arquivo ZIP com todo o código:
 
-**Arquivo:** `lumina-led-tools-v7.4.zip` (2MB)
+**Arquivo:** `ledtools-management-v7.5.zip` (2MB)
 **Localização:** `C:\Users\Usuario\djangoSIGE\`
 
 ### Upload do ZIP:
 
-1. Acesse: https://github.com/eduvazjr/lumina-led-tools
+1. Acesse: https://github.com/eduvazjr/ledtools-management
 2. Clique em **"Add file"** → **"Upload files"**
 3. Faça upload do arquivo `lumina-led-tools-v7.4.zip`
 4. OU extraia o ZIP e faça upload dos arquivos individuais
@@ -111,8 +111,8 @@ Depois tente novamente o push.
 
 | Arquivo | Tamanho | Descrição |
 |---------|---------|-----------|
-| `lumina-backup.bundle` | 2.0MB | Bundle Git completo (com histórico) |
-| `lumina-led-tools-v7.4.zip` | ~2MB | Código-fonte compactado |
+| `ledtools-management-backup.bundle` | 2.0MB | Bundle Git completo (com histórico) |
+| `ledtools-management-v7.5.zip` | ~2MB | Código-fonte compactado |
 
 **Esses arquivos podem ser usados para:**
 - Upload manual no GitHub
@@ -140,6 +140,6 @@ Quando os arquivos estiverem no GitHub:
 
 ---
 
-**Repositório:** https://github.com/eduvazjr/lumina-led-tools
+**Repositório:** https://github.com/eduvazjr/ledtools-management
 
 **O repositório já existe - só falta fazer upload dos arquivos!**

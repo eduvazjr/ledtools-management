@@ -1,6 +1,4 @@
 import os
-from decouple import config, Csv
-from dj_database_url import parse as dburl
 from .configs import DEFAULT_DATABASE_URL, DEFAULT_FROM_EMAIL, EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT, EMAIL_USE_TLS
 
 APP_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
@@ -11,36 +9,31 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(APP_ROOT))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-dev-key-for-gerenciamento')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if os.environ.get('ALLOWED_HOSTS') else ['localhost', '127.0.0.1']
 
 # Django 4.0+ valida o header Origin em requests POST mesmo same-origin.
 # Sob proxy reverso (nginx) e portas nao-default e necessario listar as
 # origens explicitamente. Veja:
 # https://docs.djangoproject.com/en/5.2/ref/settings/#csrf-trusted-origins
-CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
+CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', '').split(',') if os.environ.get('CSRF_TRUSTED_ORIGINS') else ['http://localhost', 'http://127.0.0.1']
 
 # Database: PostgreSQL em produção (Railway/Render), SQLite em desenvolvimento
 # Em produção, a variável DATABASE_URL é automaticamente fornecida
-DATABASE_URL = config('DATABASE_URL', default=None)
+# Database: SQLite em desenvolvimento e testes
+# Em produção, configure DATABASE_URL no ambiente para PostgreSQL
+DATABASE_URL = None
 
-if DATABASE_URL:
-    # Produção: usa PostgreSQL via DATABASE_URL
-    DATABASES = {
-        'default': dburl(DATABASE_URL)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(APP_ROOT, 'db.sqlite3'),
     }
-else:
-    # Desenvolvimento: usa SQLite local
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(APP_ROOT, 'db.sqlite3'),
-        }
-    }
+}
 
 
 # Application definition

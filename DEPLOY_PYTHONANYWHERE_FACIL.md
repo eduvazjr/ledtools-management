@@ -42,8 +42,8 @@
 1. No PythonAnywhere, vá em **"Consoles"** → **"Bash"**
 2. Execute:
    ```bash
-   git clone https://github.com/eduvazjr/lumina-led-tools.git
-   cd lumina-led-tools
+   git clone https://github.com/eduvazjr/ledtools-management.git
+   cd ledtools-management
    ```
 
 ---
@@ -65,12 +65,12 @@ Na página do Web App:
 
 **Source code:**
 ```
-/home/SEU_USERNAME/lumina-led-tools
+/home/SEU_USERNAME/ledtools-management
 ```
 
 **Working directory:**
 ```
-/home/SEU_USERNAME/lumina-led-tools
+/home/SEU_USERNAME/ledtools-management
 ```
 
 **WSGI configuration file:**
@@ -82,7 +82,7 @@ Na página do Web App:
 import os
 import sys
 
-path = '/home/SEU_USERNAME/lumina-led-tools'
+path = '/home/SEU_USERNAME/ledtools-management'
 if path not in sys.path:
     sys.path.append(path)
 
@@ -104,7 +104,7 @@ application = get_wsgi_application()
 2. Execute:
 
 ```bash
-cd lumina-led-tools
+cd ledtools-management
 
 # Instalar dependências
 pip3 install --user -r requirements.txt

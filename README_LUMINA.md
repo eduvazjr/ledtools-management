@@ -1,4 +1,4 @@
-# 💡 Lumina - Sistema de Gestão Empresarial LED TOOLS
+# 💡 Sistema de Gerenciamento Empresarial
 
 [![Status](https://img.shields.io/badge/Status-100%25%20Completo-success?style=for-the-badge)](.)
 [![Versão](https://img.shields.io/badge/Versão-7.3-orange?style=for-the-badge)](.)
@@ -10,7 +10,7 @@
 
 ## 🏆 Projeto 100% Completo
 
-Sistema **Lumina** modernizado e personalizado para **LED TOOLS** com:
+Sistema **Gerenciamento** modernizado e personalizado para:
 - ✅ 100% da identidade visual LED TOOLS aplicada
 - ✅ 42+ templates modernizados
 - ✅ 32+ templates com branding LED TOOLS  
@@ -89,7 +89,7 @@ python manage.py runserver
 <div align="center">
 
 ## 💡 **LUMINA**
-### Iluminando a Gestão LED TOOLS
+### Sobre o Sistema
 
 **v7.3 • 100% Completo • Enterprise-Grade**
 

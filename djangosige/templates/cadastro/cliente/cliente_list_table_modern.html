@@ -1,0 +1,53 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 100px;">Código</th>
+            <th>Nome</th>
+            <th>CPF/CNPJ</th>
+            <th style="width: 200px;">Telefone</th>
+            <th style="width: 150px;">Cidade</th>
+            <th style="width: 80px; text-align: center;">Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if all_clientes %}
+        {% for cliente in all_clientes %}
+        <tr class="clickable-row" data-href="{% url 'cadastro:editarclienteview' cliente.id %}" style="cursor: pointer;">
+            <td><strong>{{cliente.id}}</strong></td>
+            <td>
+                <div>
+                    <strong>{{cliente.nome_razao_social}}</strong>
+                    {% if cliente.indicador_ie == '9' %}
+                    <span class="badge badge-primary" style="margin-left: 8px;">PF</span>
+                    {% else %}
+                    <span class="badge" style="margin-left: 8px; background: #dbeafe; color: #1e40af;">PJ</span>
+                    {% endif %}
+                </div>
+            </td>
+            <td style="font-family: 'Consolas', monospace; font-size: 13px;">{{cliente.cpf_cnpj}}</td>
+            <td>{{cliente.telefone|default:"---"}}</td>
+            <td>{{cliente.municipio|default:"---"}}</td>
+            <td class="lista-remove" style="text-align: center;" onclick="event.stopPropagation();">
+                <input type="checkbox" 
+                       name="{{cliente.id}}" 
+                       id="remover-entrada-{{cliente.id}}"
+                       style="width: 16px; height: 16px; cursor: pointer;"/>
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="6" style="text-align: center; padding: 48px; color: #94a3b8;">
+                <div style="font-size: 48px; opacity: 0.3; margin-bottom: 12px;">👥</div>
+                <div>Nenhum cliente cadastrado</div>
+            </td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+<style>
+.clickable-row:hover {
+    background: #fafbfc !important;
+}
+</style>

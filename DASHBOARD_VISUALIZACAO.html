@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Led Tools - Dashboard Visualização</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9100;
+            --primary-dark: #E67E00;
+            --primary-light: #FFB84D;
+            --bg-light: #FFF3E0;
+            --bg-white: #FFFFFF;
+            --text-dark: #2D3436;
+            --text-medium: #94A3B8;
+            --accent: #2D3436;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            background: var(--accent);
+            color: var(--bg-white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .label {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-section h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .progress-item {
+            margin-bottom: 1rem;
+        }
+
+        .progress-item label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ECEFF1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .progress-fill.primary { background: var(--primary); }
+        .progress-fill.secondary { background: var(--primary-dark); }
+        .progress-fill.success { background: #4CAF50; }
+        .progress-fill.info { background: #2196F3; }
+
+        /* Modules */
+        .modules-section {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .modules-section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .module-tag {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* Footnote */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .progress-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎨 Lumina Led Tools</h1>
+        <p>Sistema ERP - Gestão e Limpeza LED TOOLS</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">7.5</div>
+                <div class="label">Versão do Sistema</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">30%</div>
+                <div class="label">Identidade Visual</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">7</div>
+                <div class="label">Fases de Entrega</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">12+</div>
+                <div class="label">Módulos Ativos</div>
+            </div>
+        </div>
+
+        <!-- Progress Visual Identity -->
+        <section class="progress-section">
+            <h2>📊 Identidade Visual LED TOOLS</h2>
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <label>Logo</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill primary" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <header>Header</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill primary" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Sidebar</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill primary" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Links</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill primary" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Botões</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill secondary" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Forms</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill secondary" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Dashboard</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill secondary" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules -->
+        <section class="modules-section">
+            <h2>🔧 Módulos do Sistema</h2>
+            <div class="modules-grid">
+                <span class="module-tag">Cadastro</span>
+                <span class="module-tag">Compras</span>
+                <span class="module-tag">Vendas</span>
+                <span class="module-tag">Estoque</span>
+                <span class="module-tag">Financeiro</span>
+                <span class="module-tag">Fiscal</span>
+                <span class="module-tag">Contabilidade</span>
+                <span class="module-tag">Gerencial</span>
+                <span class="module-tag">Jurídico</span>
+                <span class="module-tag">Login/Auth</span>
+            </div>
+        </section>
+
+        <!-- Delivery Phases -->
+        <section class="progress-section">
+            <h2>📦 Histórico de Entregas</h2>
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <label>Fase 2</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill success" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Fase 3</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill success" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Fase 4</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill info" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Fase 5</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill info" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Fase 6</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill info" style="width: 30%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <label>Fase 7 (100%)</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill success" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p>Lumina Led Tools - Versão 7.5 | Dados atuais: Nov 2026 | Sistema ERP Django 5.2</p>
+    </footer>
+
+</body>
+</html>
